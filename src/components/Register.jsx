@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 export default function Register() {
-    //Estados del formulario de cada input
+    
     
   const [mail, setMail] = useState("");
   const [pass1, setPass1] = useState("");
