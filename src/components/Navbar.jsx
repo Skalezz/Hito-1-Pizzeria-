@@ -1,5 +1,5 @@
 import React from "react";
-import { contador } from "../utils/contador";
+import { miles } from "../utils/number";
 
 
 const Navbar = () => {
@@ -59,7 +59,7 @@ const Navbar = () => {
               )}
             </ul>
             <span className="navbar-text ms-auto">
-              Total: ${contador(total)}
+              Total: ${miles(total)}
             </span>
           </div>
         </div>

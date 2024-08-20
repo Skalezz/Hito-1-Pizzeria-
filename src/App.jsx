@@ -5,6 +5,9 @@ import Footer from './components/Footer'
 import './App.css'
 import Register from './components/Register'
 import Login from './components/Login'
+import Cart from './components/Cart'
+import productos from './pizzas.json'
+
 
 
 function App() {
@@ -12,9 +15,10 @@ function App() {
   return (
     <>
       <Navbar/>
+      <Cart productos={productos}/>
       {/*<Home/>*/}
       {/*<Register/>*/}
-      <Login/>
+      {/*<Login/>*/}
       <Footer/>
     </>
   )

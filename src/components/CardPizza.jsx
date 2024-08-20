@@ -1,28 +1,25 @@
 import React from 'react'
 
-const CardPizza = (props) => {
-  return (
+function CardPizza( {productos} ) {
 
+  return (
     <>
-      <div className="card mx-2 my-3" style={{ width: "18rem" }}>
-        <img src={props.img} className="card-img-top" alt={props.name} />
-        <div className="card-body">
-          <h5 className="card-title fw-light mb-3">{props.name}</h5>
-          <p className="card-text h6 fw-light">
-            Ingredientes: {props.ingredients.join(", ")}
-          </p>
-          <p className="fw-light">
-            <i className="fas fa-map-marker-alt fa-xs"></i>
-           
-          </p>
-          <hr />
-          <ul className="list-group list-group-flush text-right">
-            <li className="list-group-item ms-auto fw-light">
-              <span className="h5 fw-bold green ms-3">Precio: ${props.price}</span>
-            </li>
-          </ul>
-        </div>
-      </div>
+      
+          <div className="card col-3 m-2 p-0">
+            <img src={productos.img} className="card-img-top" alt="..."/>
+            <div className="card-body">
+              <h5 className="card-title">Pizza {productos.name}</h5>
+              <p className="card-text"> {productos.ingredients.join(", ")} </p>
+            </div>
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item">Precio: ${productos.price} </li>
+            </ul>
+            <div className="card-body">
+              <a href="#" className="card-link">Ver mas</a>
+              <a href="#" className="card-link">Añadir</a>
+            </div>
+          </div>
+        
     </>
   )
 }
