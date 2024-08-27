@@ -1,37 +1,34 @@
-import React from 'react'
-import Header from './Header'
+import React, {useState, useEffect} from 'react'
 import CardPizza from './CardPizza'
 
-const Home = () => {
+
+
+function Home  ()  {
+
+  const [pizzas, setPizzas] = useState([])
+
+  
+  const consultarApi = async ()=>{
+    const url = 'http://localhost:5000/api/pizzas';
+    const response = await fetch(url);
+    const data = await response.json();
+    setPizzas(data)
+  }
+
+  useEffect ( ()=>{
+    consultarApi()
+  }, [] )
+
+
   return (
     <>
-    <Header/>
+      <div className='my-5 row d-flex align-items-center justify-content-center'>
 
-    <div className='container'>
-      <div className='d-flex flex-wrap justify-content-between'>
-              <CardPizza
-                name="Napolitana"
-                price={5950}
-                ingredients={["mozzarella", "tomates", "jamón", "orégano"]}
-                img="https://www.lanacion.com.ar/resizer/v2/pizza-NUKNWKWWRBAGXEECJWGLKMULVQ.jpg?auth=df70fb70d27e9a242dfe70068af898769f18e832bb543cb49d3faf002314bb82&width=420&height=280&quality=70&smart=true"
-              />
+        {pizzas.map( (productos) => (
+            <CardPizza productos = {productos} />
+        ) )}
 
-              <CardPizza
-                 name="Española"
-                 price={6950}
-                 ingredients={["mozzarella ", "gorgonzola", "parmesano ", "provolone"]}
-                 img="https://i.ytimg.com/vi/DOJaGdGoTVo/sddefault.jpg"
-              />
-
-              <CardPizza
-                name="Pepperoni"
-                price={6950}
-                ingredients={["mozzarella", "pepperoni", "orégano"]}
-                img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI0-HmskFIOzX-o3_DTZdgLshMNluWvZpwAw&s"
-              />
-        </div>
-    </div>
-
+      </div>
     </>
   )
 }

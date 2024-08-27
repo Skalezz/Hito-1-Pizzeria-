@@ -1,24 +1,27 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import './App.css'
 import Register from './components/Register'
 import Login from './components/Login'
 import Cart from './components/Cart'
 import productos from './pizzas.json'
+import Pizza from './components/Pizza'
 
 
 
-function App() {
+
+function App  () {
 
   return (
     <>
       <Navbar/>
-      <Cart productos={productos}/>
-      {/*<Home/>*/}
+      {/* <Home/> */}
       {/*<Register/>*/}
       {/*<Login/>*/}
+      {/* <Cart productos={productos}/> */}
+      <Pizza/>
       <Footer/>
     </>
   )
