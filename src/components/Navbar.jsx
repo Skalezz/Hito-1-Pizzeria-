@@ -1,11 +1,15 @@
 import React from "react";
 import { miles } from "../utils/number";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
 
 const Navbar = () => {
-  const total = 25000;
-  const token = false;
+  
+    const {totalPagar} = useContext(CartContext)
+    const token = false;
+
   return (
     <>
        <div>
@@ -34,7 +38,7 @@ const Navbar = () => {
                 <Link className="nav-link" to="/cart">Cart</Link>
             </div>
             </div>
-            <Link className="nav-link justify-content-end" to="/cart">Total ${miles(total)} </Link>
+            <Link className="nav-link justify-content-end" to="/cart">Total ${miles(totalPagar)} </Link>
         </div>
         </nav>
     </div>
