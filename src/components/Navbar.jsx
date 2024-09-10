@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
 
-const Navbar = () => {
+function Navbar  ()  {
   
     const {totalPagar} = useContext(CartContext)
     const token = false;
