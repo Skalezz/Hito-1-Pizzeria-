@@ -1,7 +1,6 @@
+import React from 'react';
 import React, {useState, useEffect} from 'react'
 import CardPizza from '../components/CardPizza';
-
-
 
 function Home  ()  {
 
@@ -18,7 +17,6 @@ function Home  ()  {
   useEffect ( ()=>{
     consultarApi()
   }, [] )
-
 
   return (
     <>
