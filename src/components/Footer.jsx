@@ -1,8 +1,10 @@
 import React from 'react'
 
-const Footer = () => {
+function Footer() {
   return (
-    <p>© 2021 - Pizzería Mamma Mia! - Todos los derechos reservados</p>
+    <div className='containerFooter'>
+      <p>© 2021 - Pizzería Mamma Mia! - Todos los derechos reservados</p>
+    </div>
   )
 }
 

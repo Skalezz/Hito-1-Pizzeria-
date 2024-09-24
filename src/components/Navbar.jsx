@@ -3,16 +3,17 @@ import { miles } from "../utils/number";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { UserContext } from "../context/UserContext";
 
 
 function Navbar  ()  {
   
     const {totalPagar} = useContext(CartContext)
-    const token = false;
+    const {user, logout} = useContext(UserContext)
 
   return (
     <>
-       <div>
+    <div>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container">
             <Link className="navbar-brand" to="/">Home </Link>
@@ -22,10 +23,10 @@ function Navbar  ()  {
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
                 {
-                    token ? (
+                    user ? (
                         <>
                         <Link className="nav-link active" aria-current="page" to="/profile">Profile</Link>
-                        <Link className="nav-link" to="/logout">Logout</Link>
+                        <Link onClick={logout} className="nav-link" to="/">Logout</Link>
                         </>
                     ):(
                         <>
@@ -34,7 +35,7 @@ function Navbar  ()  {
                         </>
                     )
                 }
-                <Link className="nav-link" to="/pizza">Pizza</Link>
+                <Link className="nav-link" to="/pizza/:id">Pizza</Link>
                 <Link className="nav-link" to="/cart">Cart</Link>
             </div>
             </div>
