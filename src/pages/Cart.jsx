@@ -2,11 +2,11 @@ import React from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 import { miles } from '../utils/number'
-import { UserContext } from '../context/UserContext'
+import { UserContext } from '../context/UserContext';
 
 
 const Cart = ( {productos} ) => {
-    
+
     const {carrito, total, totalPagar, incrementar, decrementar} = useContext(CartContext)
     const {user} = useContext(UserContext)
 
@@ -15,10 +15,28 @@ const Cart = ( {productos} ) => {
         return itemEnCarrito ? itemEnCarrito.count : 0;
     }
 
+    
+    const compraCart = async ()=> {
+        await fetch("http://localhost:5000/api/checkout", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token_jwt}`,
+            },
+                body: JSON.stringify({
+                cart: carrito,
+            }),
+        });
+    }
+
+    
+
+    
+
 
   return (
-    <>
     
+    <>
     <div className='container'>
         <h2>Cantidad de Pizzas:{total} </h2>
         <h2>Total a Pagar:${miles(totalPagar)} </h2>
