@@ -24,7 +24,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
+  /* display: flex; */
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -65,4 +65,44 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+.header_container{
+  text-align: center;
+  color: white;
+}
+.header_container .Header_pizzeria{
+  background-image: url(./assets/header_pizzeria.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.containerFooter{
+  height: 80px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mensaje_exito{
+  background-color: #45a745;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  border-radius: 5px;
+  width: 400px;
+  margin: 0 auto;
+}
+.mensaje_error{
+  background-color: #ad2c2c;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  border-radius: 5px;
+  width: 400px;
+  margin: 0 auto;
 }
